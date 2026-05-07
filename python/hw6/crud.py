@@ -88,6 +88,18 @@ def delete_student(db: Session, student_id: int):
     return False
 
 
+def delete_students_by_ids(db: Session, student_ids: list[int]) -> int:
+    if not student_ids:
+        return 0
+    deleted_count = (
+        db.query(models.Student)
+        .filter(models.Student.id.in_(student_ids))
+        .delete(synchronize_session=False)
+    )
+    db.commit()
+    return deleted_count
+
+
 # 2. Populate from CSV
 def populate_from_csv(db: Session, file_path: str = "students.csv"):
     with open(file_path, "r", encoding="utf-8") as f:
