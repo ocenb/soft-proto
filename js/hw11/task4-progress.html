@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Задание 4 - Прогресс-бар</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .wrapper {
+      max-width: 520px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .title {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .track {
+      width: 100%;
+      height: 24px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    #progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #10b981, #22c55e);
+      transition: width 0.3s ease;
+    }
+
+    #status {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrapper">
+    <h1 class="title">Выполнение задачи</h1>
+    <div class="track">
+      <div id="progress-bar"></div>
+    </div>
+    <p id="status">0%</p>
+  </main>
+
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    const status = document.getElementById('status');
+
+    const totalDurationMs = 5000; // 5 секунд
+    const stepMs = 1000; // обновление каждую секунду
+    const stepPercent = 20; // 100 / 5
+
+    let currentPercent = 0;
+
+    const timer = setInterval(() => {
+      currentPercent += stepPercent;
+      progressBar.style.width = `${currentPercent}%`;
+
+      if (currentPercent < 100) {
+        status.textContent = `${currentPercent}%`;
+      } else {
+        status.textContent = 'Готово!';
+        clearInterval(timer);
+      }
+    }, stepMs);
+
+    // Защитная проверка: завершить ровно через 5 секунд
+    setTimeout(() => {
+      if (currentPercent < 100) {
+        currentPercent = 100;
+        progressBar.style.width = '100%';
+        status.textContent = 'Готово!';
+        clearInterval(timer);
+      }
+    }, totalDurationMs + 50);
+  </script>
+</body>
+</html>
