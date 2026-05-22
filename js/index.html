@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Kit Documentation</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <header class="navbar" id="top">
+      <div class="container navbar__container">
+        <a href="#top" class="navbar__brand">SoftProto UI Kit</a>
+
+        <button
+          class="navbar__toggle"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="navbar-menu"
+        >
+          <span class="navbar__toggle-line"></span>
+          <span class="navbar__toggle-line"></span>
+          <span class="navbar__toggle-line"></span>
+        </button>
+
+        <nav class="navbar__menu" id="navbar-menu">
+          <a class="navbar__link" href="#buttons">Buttons</a>
+          <a class="navbar__link" href="#inputs">Inputs</a>
+          <a class="navbar__link" href="#dropdowns">Dropdowns</a>
+          <a class="navbar__link" href="#checks">Checks</a>
+          <a class="navbar__link" href="#cards">Cards</a>
+          <a class="navbar__link" href="#layout">Layout</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container docs">
+      <h1 class="docs__title">Документация UI Kit</h1>
+
+      <section class="docs__section" id="buttons">
+        <h2 class="docs__section-title">Кнопки (Button)</h2>
+        <p class="docs__description">Primary, Secondary, Disabled. Размеры: small, medium, large.</p>
+
+        <div class="demo-row">
+          <button class="button button--primary button--small" type="button">Primary small</button>
+          <button class="button button--primary" type="button">Primary medium</button>
+          <button class="button button--primary button--large" type="button">Primary large</button>
+        </div>
+
+        <div class="demo-row">
+          <button class="button button--secondary button--small" type="button">Secondary small</button>
+          <button class="button button--secondary" type="button">Secondary medium</button>
+          <button class="button button--secondary button--large" type="button">Secondary large</button>
+        </div>
+
+        <div class="demo-row">
+          <button class="button button--primary" type="button" disabled>Disabled</button>
+        </div>
+      </section>
+
+      <section class="docs__section" id="inputs">
+        <h2 class="docs__section-title">Поле ввода (Input)</h2>
+        <p class="docs__description">Состояния: normal, focus, error. Поддержка иконки.</p>
+
+        <div class="input-group">
+          <label class="input-group__label" for="input-normal">Обычное поле</label>
+          <input class="input" id="input-normal" type="text" placeholder="Введите текст" />
+        </div>
+
+        <div class="input-group">
+          <label class="input-group__label" for="input-icon">Поле с иконкой поиска</label>
+          <div class="input input--with-icon">
+            <span class="input__icon" aria-hidden="true">🔍</span>
+            <input class="input__field" id="input-icon" type="text" placeholder="Поиск" />
+          </div>
+        </div>
+
+        <div class="input-group input-group--error">
+          <label class="input-group__label" for="input-error">Поле с ошибкой</label>
+          <input class="input input--error" id="input-error" type="text" value="Неверное значение" />
+          <p class="input-group__error-text">Ошибка: проверьте введенные данные.</p>
+        </div>
+      </section>
+
+      <section class="docs__section" id="dropdowns">
+        <h2 class="docs__section-title">Выпадающий список (Dropdown)</h2>
+        <label class="dropdown__label" for="demo-dropdown">Выберите вариант</label>
+        <select class="dropdown" id="demo-dropdown">
+          <option>Frontend</option>
+          <option>Backend</option>
+          <option>DevOps</option>
+        </select>
+      </section>
+
+      <section class="docs__section" id="checks">
+        <h2 class="docs__section-title">Чекбоксы и радиокнопки</h2>
+
+        <div class="checks">
+          <label class="check check--checkbox">
+            <input class="check__input" type="checkbox" checked />
+            <span class="check__marker"></span>
+            <span class="check__text">Согласен с условиями</span>
+          </label>
+
+          <label class="check check--checkbox">
+            <input class="check__input" type="checkbox" />
+            <span class="check__marker"></span>
+            <span class="check__text">Подписаться на новости</span>
+          </label>
+
+          <label class="check check--radio">
+            <input class="check__input" type="radio" name="level" checked />
+            <span class="check__marker"></span>
+            <span class="check__text">Junior</span>
+          </label>
+
+          <label class="check check--radio">
+            <input class="check__input" type="radio" name="level" />
+            <span class="check__marker"></span>
+            <span class="check__text">Middle</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="docs__section" id="cards">
+        <h2 class="docs__section-title">Карточки (Card)</h2>
+        <p class="docs__description">Модификаторы: с изображением/без изображения, размеры small/medium/large.</p>
+
+        <div class="grid grid--cards">
+          <article class="card card--small card--with-image">
+            <img
+              class="card__image"
+              src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&auto=format&fit=crop"
+              alt="Рабочее место"
+            />
+            <div class="card__body">
+              <h3 class="card__title">Small card</h3>
+              <p class="card__text">Компактная карточка для коротких блоков.</p>
+            </div>
+          </article>
+
+          <article class="card card--medium card--with-image">
+            <img
+              class="card__image"
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&auto=format&fit=crop"
+              alt="Команда за ноутбуками"
+            />
+            <div class="card__body">
+              <h3 class="card__title">Medium card</h3>
+              <p class="card__text">Средний размер для описаний и превью.</p>
+            </div>
+          </article>
+
+          <article class="card card--large card--no-image">
+            <div class="card__body">
+              <h3 class="card__title">Large card without image</h3>
+              <p class="card__text">Большая карточка подходит для контента без обложки.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="docs__section" id="layout">
+        <h2 class="docs__section-title">Flexbox и Grid</h2>
+
+        <div class="layout-demo layout-demo--centered">
+          <p>Контейнер с центральным выравниванием контента (Flexbox).</p>
+        </div>
+
+        <div class="grid grid--gallery">
+          <div class="tile">1</div>
+          <div class="tile">2</div>
+          <div class="tile">3</div>
+          <div class="tile">4</div>
+          <div class="tile">5</div>
+          <div class="tile">6</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./ui.js"></script>
+  </body>
+</html>
