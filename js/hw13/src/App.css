@@ -1,0 +1,154 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid #d8dde7;
+  background: #f6f8fc;
+  flex-wrap: wrap;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 24px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #274c77;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.nav-link-active {
+  color: #fff;
+  background: #274c77;
+  border-color: #274c77;
+}
+
+.favorites-counter {
+  margin: 0;
+  color: #44566c;
+  font-size: 14px;
+}
+
+.page-content {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.stack {
+  display: grid;
+  gap: 14px;
+}
+
+.form-card {
+  max-width: 480px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.field input {
+  border: 1px solid #b5c1d6;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 16px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button,
+.link-button {
+  border: 1px solid #274c77;
+  background: #274c77;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+button.secondary {
+  background: #fff;
+  color: #274c77;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.status {
+  color: #3b556e;
+}
+
+.error {
+  color: #b00020;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  border: 1px solid #d8dde7;
+  border-radius: 12px;
+  padding: 14px;
+  background: #fff;
+  display: grid;
+  gap: 10px;
+}
+
+.card h3 {
+  margin: 0;
+}
+
+.details-card {
+  max-width: 720px;
+}
+
+.details-image {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #d8dde7;
+}
+
+.grades-list {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 4px;
+}
+
+@media (max-width: 680px) {
+  .app-header {
+    padding: 14px;
+  }
+
+  .page-content {
+    padding: 14px;
+  }
+}
